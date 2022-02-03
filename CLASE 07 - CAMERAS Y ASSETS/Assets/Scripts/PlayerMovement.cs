@@ -50,7 +50,11 @@ public class PlayerMovement : MonoBehaviour
         //SI APRIETO E
         if (Input.GetKeyDown(KeyCode.E) && canShoot)
         {
-            Instantiate(bulletPrefab, shootPoint.transform.position, bulletPrefab.transform.rotation);
+            //
+            Instantiate(bulletPrefab, shootPoint.transform.position, bulletPrefab.transform.rotation);// PROYECTILES
+            Instantiate(bulletPrefab, shootPoint.transform.position + Vector3.forward, bulletPrefab.transform.rotation);// PROYECTILES\
+             Instantiate(bulletPrefab, shootPoint.transform.position + Vector3.back, bulletPrefab.transform.rotation);// PROYECTILES
+            
             canShoot = false;
         }
 
